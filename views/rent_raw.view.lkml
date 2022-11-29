@@ -9,6 +9,12 @@ view: rent_raw {
     sql: ${TABLE}.ID ;;
   }
 
+  measure: count {
+    type: count_distinct
+    sql: ${id} ;;
+    drill_fields: [id,latitude,longitude]
+  }
+
   dimension: built_up_size {
     type: number
     sql: ${TABLE}.BuiltUpSize ;;
@@ -141,7 +147,7 @@ view: rent_raw {
     sql: ${TABLE}.UpdatedUser ;;
   }
 
-  measure: count {
+  measure: count_dis {
     type: count
     drill_fields: [id, property_name]
   }
