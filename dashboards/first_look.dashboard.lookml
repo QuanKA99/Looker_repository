@@ -2,7 +2,9 @@
   title: first_look
   layout: newspaper
   preferred_viewer: dashboards-next
+  include: "first_look.dashboard.lookml"
   preferred_slug: ZhFW56x5T1oh2BWOKnlhEP
+
   elements:
   - title: First_look
     name: First_look
