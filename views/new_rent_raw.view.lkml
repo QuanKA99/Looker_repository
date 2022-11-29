@@ -10,57 +10,54 @@ view: new_rent_raw {
   #   sql: ${TABLE}.user_id ;;
   # }
   #
-  dimension: user_id {
-    primary_key: yes
-    type :  number
-    sql: ${TABLE}.ID ;;
+   dimension: apartment {
+    type: number
+    sql: ${TABLE}.Apartment ;;
   }
-  dimension: Built_up_size {
-    type:  number
+
+  dimension: built_up_size {
+    type: number
     sql: ${TABLE}.BuiltUpSize ;;
   }
-  dimension: city {
-    type: string
-    sql: ${TABLE}.City ;;
-  }
 
-  dimension_group: created_date {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.CreatedDateTime ;;
-  }
-
-  dimension: created_user {
-    type: string
-    sql: ${TABLE}.CreatedUser ;;
-  }
-
-  dimension: data_source_id {
+  dimension: bungalow {
     type: number
-    sql: ${TABLE}.DataSourceID ;;
+    sql: ${TABLE}.Bungalow ;;
   }
 
-  dimension: furnishing {
-    type: string
-    sql: ${TABLE}.Furnishing ;;
-  }
-
-  dimension: latitude {
+  dimension: cluster_house {
     type: number
-    sql: ${TABLE}.Latitude ;;
+    sql: ${TABLE}.Cluster_House ;;
   }
 
-  dimension: longitude {
+  dimension: condominium {
     type: number
-    sql: ${TABLE}.Longitude ;;
+    sql: ${TABLE}.Condominium ;;
+  }
+
+  dimension: flat {
+    type: number
+    sql: ${TABLE}.Flat ;;
+  }
+
+  dimension: four_sty_terrace_link_house {
+    type: number
+    sql: ${TABLE}.Four_sty_Terrace_LinkHouse ;;
+  }
+
+  dimension: fully_furnished {
+    type: number
+    sql: ${TABLE}.Fully_Furnished ;;
+  }
+
+  dimension: johor {
+    type: number
+    sql: ${TABLE}.johor ;;
+  }
+
+  dimension: kuala_lumpur {
+    type: number
+    sql: ${TABLE}.kuala_lumpur ;;
   }
 
   dimension: no_of_bathroom {
@@ -78,77 +75,84 @@ view: new_rent_raw {
     sql: ${TABLE}.NoOfParking ;;
   }
 
-  dimension: postcode {
-    type: string
-    sql: ${TABLE}.Postcode ;;
-  }
-
-  dimension_group: posted {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.PostedDate ;;
-  }
-
-  dimension: property_address {
-    type: string
-    sql: ${TABLE}.PropertyAddress ;;
-  }
-
-  dimension: property_name {
-    type: string
-    sql: ${TABLE}.PropertyName ;;
-  }
-
-  dimension: property_type {
-    type: string
-    sql: ${TABLE}.PropertyType ;;
-  }
-
-  dimension: rental_per_mth {
+  dimension: one_point_five_sty_terrace_link_house {
     type: number
-    sql: ${TABLE}.RentalPerMth ;;
+    sql: ${TABLE}.One_point_five_sty_Terrace_LinkHouse ;;
   }
 
-  dimension: source_url {
-    type: string
-    sql: ${TABLE}.SourceUrl ;;
+  dimension: one_sty_terrace_link_house {
+    type: number
+    sql: ${TABLE}.One_sty_Terrace_LinkHouse ;;
   }
 
-  dimension: state {
-    type: string
-    sql: ${TABLE}.State ;;
+  dimension: partly_furnished {
+    type: number
+    sql: ${TABLE}.Partly_Furnished ;;
   }
 
-  dimension_group: updated_date {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.UpdatedDateTime ;;
+  dimension: putrajaya {
+    type: number
+    sql: ${TABLE}.putrajaya ;;
   }
 
-  dimension: updated_user {
-    type: string
-    sql: ${TABLE}.UpdatedUser ;;
+  dimension: rental_per_mth_after {
+    type: number
+    sql: ${TABLE}.RentalPerMth_After ;;
+  }
+
+  dimension: residential_land {
+    type: number
+    sql: ${TABLE}.Residential_Land ;;
+  }
+
+  dimension: selangor {
+    type: number
+    sql: ${TABLE}.selangor ;;
+  }
+
+  dimension: semi_detached_house {
+    type: number
+    sql: ${TABLE}.Semi_detached_House ;;
+  }
+
+  dimension: serviced_residence {
+    type: number
+    sql: ${TABLE}.Serviced_Residence ;;
+  }
+
+  dimension: three_point_five_sty_terrace_link_house {
+    type: number
+    sql: ${TABLE}.Three_point_five_sty_Terrace_LinkHouse ;;
+  }
+
+  dimension: three_sty_terrace_link_house {
+    type: number
+    sql: ${TABLE}.Three_sty_Terrace_LinkHouse ;;
+  }
+
+  dimension: townhouse {
+    type: number
+    sql: ${TABLE}.Townhouse ;;
+  }
+
+  dimension: two_point_five_sty_terrace_link_house {
+    type: number
+    sql: ${TABLE}.Two_point_five_sty_Terrace_LinkHouse ;;
+  }
+
+  dimension: two_sty_terrace_link_house {
+    type: number
+    sql: ${TABLE}.Two_sty_Terrace_LinkHouse ;;
+  }
+
+  dimension: unfurnished {
+    type: number
+    sql: ${TABLE}.Unfurnished ;;
   }
 
   measure: count {
     type: count
-    drill_fields: [user_id, property_name]
+    drill_fields: []
   }
   # dimension: lifetime_orders {
   #   description: "The total number of orders for each user"

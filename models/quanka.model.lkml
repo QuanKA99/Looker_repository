@@ -25,7 +25,7 @@ explore: rent_raw {}
 explore: rent_raw_processed {}
 
 explore: house_time_proceesed {}
-
+explore: new_rent_raw {}
 explore: predictions_2022_10_24_t18_59_24_350_z_628 {
   join: predictions_2022_10_24_t18_59_24_350_z_628__explanation__attributions {
     view_label: "Predictions 2022 10 24 T18 59 24 350 Z 628: Explanation Attributions"

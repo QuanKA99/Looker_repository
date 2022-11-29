@@ -51,4 +51,8 @@ view: rent_prob_processed {
     type: count
     drill_fields: []
   }
+  measure: new_review {
+    type: sum
+    sql: ${review} ;;
+  }
 }
