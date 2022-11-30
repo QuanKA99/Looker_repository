@@ -60,6 +60,15 @@ view: rent_prob_processed {
     value_format_name: usd
     sql: ${price} ;;
   }
+  measure: price_total {
+    type: sum
+    value_format_name: usd
+    sql: CASE
+          WHEN ${review} = 'POOR' THEN ${price}
+          WHEN ${review} = 'AVERAGE' THEN ${price}
+          WHEN ${review} = 'EXCELLENT' THEN ${price}
+          END;;
+  }
   measure: sum_poor {
     type: sum
     value_format_name: usd
