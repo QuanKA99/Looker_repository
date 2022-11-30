@@ -97,21 +97,21 @@ view: rent_prob_processed {
   #         WHEN ${review} = 'EXCELLENT' THEN (1.0*${sum_excellent}/NULLIF(${total_price},0))
   #         END;;
   # }
-  measure: total_price_poor_percentage {
-    type: number
-    value_format_name: percent_2
-    sql: 1.0 * ${sum_poor}/ NULLIF(${total_price},0) ;;
-  }
-  measure: total_price_average_percentage {
-    type: number
-    value_format_name: percent_2
-    sql: 1.0 * ${sum_average}/ NULLIF(${total_price},0) ;;
-  }
-  measure: total_price_excellent_percentage {
-    type: number
-    value_format_name: percent_2
-    sql: 1.0 * ${sum_excellent}/ NULLIF(${total_price},0) ;;
-  }
+  # measure: total_price_poor_percentage {
+  #   type: number
+  #   value_format_name: percent_2
+  #   sql: 1.0 * ${sum_poor}/ NULLIF(${total_price},0) ;;
+  # }
+  # measure: total_price_average_percentage {
+  #   type: number
+  #   value_format_name: percent_2
+  #   sql: 1.0 * ${sum_average}/ NULLIF(${total_price},0) ;;
+  # }
+  # measure: total_price_excellent_percentage {
+  #   type: number
+  #   value_format_name: percent_2
+  #   sql: 1.0 * ${sum_excellent}/ NULLIF(${total_price},0) ;;
+  # }
   # dimension: percentage  {
   #   type: number
   #   value_format_name: percent_2
