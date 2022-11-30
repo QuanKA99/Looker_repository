@@ -60,15 +60,7 @@ view: rent_prob_processed {
     value_format_name: usd
     sql: ${price} ;;
   }
-  measure: price_total {
-    type: sum
-    value_format_name: usd
-    sql: CASE
-          WHEN ${review} = 'POOR' THEN ${price}
-          WHEN ${review} = 'AVERAGE' THEN ${price}
-          WHEN ${review} = 'EXCELLENT' THEN ${price}
-          END;;
-  }
+
   measure: sum_poor {
     type: sum
     value_format_name: usd
@@ -96,7 +88,15 @@ view: rent_prob_processed {
       value: "EXCELLENT"
     }
   }
-
+  measure: price_total {
+    type: number
+    value_format_name: percent_2
+    sql: CASE
+          WHEN ${review} = 'POOR' THEN (1.0*${sum_poor}/NULLIF(SUM(${total_price},0)))
+          WHEN ${review} = 'AVERAGE' THEN (1.0*${sum_average}/NULLIF(SUM(${total_price},0)))
+          WHEN ${review} = 'EXCELLENT' (1.0*${sum_excellent}/NULLIF(SUM(${total_price},0)))
+          END;;
+  }
   measure: total_price_poor_percentage {
     type: number
     value_format_name: percent_2
