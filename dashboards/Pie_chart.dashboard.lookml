@@ -14,7 +14,7 @@
       type: looker_pie
       fields: [rent_prob_processed.rating, rent_prob_processed.total_price]
       sorts: [rent_prob_processed.rating]
-      limit: 100
+      limit: 400
       value_labels: legend
       label_type: labPer
       x_axis_gridlines: false
