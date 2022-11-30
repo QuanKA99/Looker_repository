@@ -94,7 +94,7 @@ view: rent_prob_processed {
     sql: CASE
           WHEN ${review} = 'POOR' THEN (1.0*${sum_poor}/NULLIF(SUM(${total_price},0)))
           WHEN ${review} = 'AVERAGE' THEN (1.0*${sum_average}/NULLIF(SUM(${total_price},0)))
-          WHEN ${review} = 'EXCELLENT' (1.0*${sum_excellent}/NULLIF(SUM(${total_price},0)))
+          WHEN ${review} = 'EXCELLENT' THEN (1.0*${sum_excellent}/NULLIF(SUM(${total_price},0)))
           END;;
   }
   measure: total_price_poor_percentage {
