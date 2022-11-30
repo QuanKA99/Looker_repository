@@ -88,39 +88,11 @@ view: rent_prob_processed {
       value: "EXCELLENT"
     }
   }
-  # measure: price_total {
-  #   type: number
-  #   value_format_name: percent_2
-  #   sql: CASE
-  #         WHEN ${review} = 'POOR' THEN (1.0 * ${sum_poor}/NULLIF(${total_price},0))
-  #         WHEN ${review} = 'AVERAGE' THEN (1.0*${sum_average}/NULLIF(${total_price},0))
-  #         WHEN ${review} = 'EXCELLENT' THEN (1.0*${sum_excellent}/NULLIF(${total_price},0))
-  #         END;;
-  # }
-  # measure: total_price_poor_percentage {
-  #   type: number
-  #   value_format_name: percent_2
-  #   sql: 1.0 * ${sum_poor}/ NULLIF(${total_price},0) ;;
-  # }
-  # measure: total_price_average_percentage {
-  #   type: number
-  #   value_format_name: percent_2
-  #   sql: 1.0 * ${sum_average}/ NULLIF(${total_price},0) ;;
-  # }
-  # measure: total_price_excellent_percentage {
-  #   type: number
-  #   value_format_name: percent_2
-  #   sql: 1.0 * ${sum_excellent}/ NULLIF(${total_price},0) ;;
-  # }
-  # dimension: percentage  {
-  #   type: number
-  #   value_format_name: percent_2
-  #   sql: CASE
-  #         WHEN ${review} = 'POOR' THEN ${total_price_poor_percentage}
-  #         WHEN ${review} = 'AVERAGE' THEN ${total_price_average_percentage}
-  #         WHEN ${review} = 'EXCELLENT' THEN ${total_price_excellent_percentage}
-  #         END;;
-  # }
+  measure: avg_price {
+    type: average
+    value_format_name: usd
+    sql: ${price} ;;
+  }
   measure: count {
     type: count
     drill_fields: []
