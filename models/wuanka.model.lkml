@@ -4,6 +4,7 @@ include: "/views/*.view.lkml"
 include: "/views/**/*.view"
 include: "/dashboards/first_look.dashboard.lookml"
 include: "/dashboards/Second_look.dashboard.lookml"
+include: "/dashboards/Pie_chart.dashboard.lookml"
 # include all views in the views/ folder in this project
 # include: "/**/*.view.lkml"                 # include all views in this project
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
