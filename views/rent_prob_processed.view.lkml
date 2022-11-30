@@ -50,8 +50,8 @@ view: rent_prob_processed {
   dimension: rating {
     group_label: "Rating"
     sql: CASE
-          WHEN ${review} < 2 THEN "POOR"
-          WHEN ${review} <4 AND ${review} >=2 THEN "AVERAGE"
+          WHEN ${review} <= 3 THEN "POOR"
+          WHEN ${review} <4 AND ${review} >3 THEN "AVERAGE"
           WHEN ${review} >=4 THEN "EXCELLENT"
           END;;
   }
