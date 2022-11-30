@@ -58,7 +58,7 @@ view: rent_prob_processed {
   measure: total_price {
     type: sum
     value_format_name: usd
-    sql: ${price} ;;
+    sql: ${TABLE}.price ;;
   }
 
   measure: sum_poor {
@@ -100,7 +100,7 @@ view: rent_prob_processed {
   measure: total_price_poor_percentage {
     type: number
     value_format_name: percent_2
-    sql: 1.0 * ${sum_poor}/ NULLIF(SUM(${total_price}),0) ;;
+    sql: 1.0 * ${sum_poor}/ NULLIF(${total_price},0) ;;
   }
   measure: total_price_average_percentage {
     type: number
