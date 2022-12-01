@@ -148,14 +148,14 @@ view: rent_raw_processed {
   }
   measure: number_bathroom  {
     type: number
-    sql: ${TABLE}.no_of_bathroom ;;
+    sql: ${TABLE}.NoOfBathroom ;;
   }
   measure: number_bedroom  {
     type: number
-    sql: ${TABLE}.no_of_bedroom ;;
+    sql: ${TABLE}.NoOfBedroom ;;
   }
   measure: number_parking {
     type: number
-    sql: ${TABLE}.no_of_parking ;;
+    sql: ${TABLE}.NoOfParking ;;
   }
 }
