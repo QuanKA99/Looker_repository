@@ -146,4 +146,16 @@ view: rent_raw_processed {
     type: count
     drill_fields: []
   }
+  measure: number_bathroom  {
+    type: number
+    sql: ${no_of_bathroom} ;;
+  }
+  measure: number_bedroom  {
+    type: number
+    sql: ${no_of_bedroom} ;;
+  }
+  measure: number_parking {
+    type: number
+    sql: ${no_of_parking} ;;
+  }
 }
